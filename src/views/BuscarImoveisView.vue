@@ -2,7 +2,7 @@
 import BuscaHome from "@/components/BuscaHome.vue";
 import Imoveis from "@/components/Imoveis.vue";
 import Filtro from "@/components/Filtro.vue";
-import Spinner from "@/components/Spinner.vue";
+import SpinnerImovel from "@/components/SpinnerImovel.vue";
 import axios from 'axios';
 
 
@@ -12,7 +12,7 @@ export default {
     Imoveis,
     BuscaHome,
     Filtro,
-    Spinner
+    SpinnerImovel
 
   },
   data() {
@@ -46,10 +46,8 @@ export default {
       </div>
       <div class="col-md-8">
         <Filtro descricao="Resultado da sua busca" />
-        <Spinner :loading="loading" />
-
-        <!-- {{info}} -->
         <div class="row">
+          <SpinnerImovel :loading="loading" :quantidade="2"/>
           <div class="col-md-6" v-for="(item,index) in info" :key="index">
             <Imoveis v-bind="item" />
           </div>

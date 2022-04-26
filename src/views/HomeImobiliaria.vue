@@ -3,14 +3,14 @@ import BuscaHome from "@/components/BuscaHome.vue";
 import Imoveis from "@/components/Imoveis.vue";
 import Filtro from "@/components/Filtro.vue";
 import Api from "@/service/api.js"
-import Spinner from "../components/Spinner.vue";
+import SpinnerImovel from "../components/SpinnerImovel.vue";
 export default {
 
     components: {
         Imoveis,
         BuscaHome,
         Filtro,
-        Spinner
+        SpinnerImovel
     },
     data() {
         return {
@@ -50,7 +50,7 @@ export default {
         <div class="container pt-4">
             <Filtro descricao="Destaques" />
             <div class="row pt-3">
-                <Spinner :loading="loading"/>
+                <SpinnerImovel :loading="loading" :quantidade="4"/>
                 <div class="col-md-3" v-for="imovel in imoveis" :key="imovel.id" v-show="imovel.destaque === 1">
                     <Imoveis v-bind="imovel"   />
                 </div>

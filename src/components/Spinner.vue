@@ -1,7 +1,7 @@
 <script>
 export default {
     name: "Spinner",
-    props: ['loading']
+    props: ['loading', 'quantidade']
 }
 </script>
 
